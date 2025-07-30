@@ -1,2 +1,231 @@
 # ALHABEEB-METAL
 لأجود أنواع المطابخ  والأبواب والشبابيك الألومنيوم وال  upvc
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مصنع الحبيب ميتال | أبواب وشبابيك ألوميتال</title>
+    <!-- Chosen Palette: Warm Neutral Harmony -->
+    <!-- Application Structure Plan: A single-page, scrolling application designed to guide the user through a narrative. It starts with a strong Hero section (brand intro), moves to an interactive Features grid (the 6 selling points), then a visual Gallery (to prove the 'design' claim), followed by a simple Process section (to build trust in 'installation'), and ends with a clear Contact/CTA section. This structure transforms the linear video script into an exploratory but guided digital experience, prioritizing clarity and building value before the final call to action. -->
+    <!-- Visualization & Content Choices: The source is qualitative, so no data charts are used. Key info is presented as follows: 1. The 6 selling points -> Goal: Inform/Persuade -> Method: Interactive icon-based grid (HTML/Tailwind) -> Interaction: Hover effects to engage user. 2. 'Modern Designs' claim -> Goal: Showcase -> Method: Image gallery (HTML/Tailwind) -> Interaction: JS-powered modal/lightbox for viewing larger images, making the products tangible. 3. 'Professional Installation' claim -> Goal: Build Trust -> Method: 3-step process diagram (HTML/CSS) -> Interaction: Static, for clarity. This approach uses interaction to enhance understanding and visual appeal without fabricating data. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #FDFDFB;
+            color: #2D3748;
+        }
+        .hero-section {
+            background-color: #F1EFEA;
+        }
+        .btn-primary {
+            background-color: #3A5F7F;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2C4A63;
+            transform: translateY(-2px);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .gallery-img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.85);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85vw;
+            max-height: 85vh;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#3A5F7F]">مصنع الحبيب ميتال</h1>
+            <nav>
+                <a href="#features" class="text-gray-600 hover:text-[#3A5F7F] mx-3">مميزاتنا</a>
+                <a href="#gallery" class="text-gray-600 hover:text-[#3A5F7F] mx-3">أعمالنا</a>
+                <a href="#contact" class="btn-primary rounded-full px-5 py-2">تواصل معنا</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section text-center py-20 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-bold mb-4">فخامة الألوميتال لبيتك، جودة تعيش العمر!</h2>
+                <p class="text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-8">نقدم حلولاً متكاملة من الأبواب والشبابيك الألوميتال التي تجمع بين الأناقة العصرية، المتانة الفائقة، والأداء الاستثنائي.</p>
+                <a href="#features" class="btn-primary rounded-full px-8 py-3 text-lg font-semibold">اكتشف مميزاتنا</a>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">لماذا تختار الحبيب ميتال؟</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">نحن لا نقدم مجرد منتج، بل نقدم حلاً متكاملاً يضمن لك الراحة، الأمان، والجمال لسنوات طويلة.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: Quality -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">🛡️</div>
+                        <h4 class="text-xl font-bold mb-2">الجودة يا باشا!</h4>
+                        <p class="text-gray-600">نستخدم خامات ألوميتال أصلية 100% تضمن لك متانة وقوة تتحمل أقسى الظروف الجوية.</p>
+                    </div>
+                    <!-- Feature 2: Design -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">🎨</div>
+                        <h4 class="text-xl font-bold mb-2">تصميمات مودرن</h4>
+                        <p class="text-gray-600">تشكيلة واسعة من الألوان والتصميمات العصرية التي تناسب كل الأذواق من الكلاسيك للمودرن.</p>
+                    </div>
+                    <!-- Feature 3: Insulation -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">🎧</div>
+                        <h4 class="text-xl font-bold mb-2">عزل ولا أحلى</h4>
+                        <p class="text-gray-600">عزل حراري وصوتي ممتاز يضمن لك الهدوء والراحة ويوفر في فاتورة الكهرباء.</p>
+                    </div>
+                    <!-- Feature 4: Egyptian Made -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">🇪🇬</div>
+                        <h4 class="text-xl font-bold mb-2">صناعة مصرية</h4>
+                        <p class="text-gray-600">نفخر بمنتجاتنا المصنوعة في مصر بأحدث التقنيات وأيادي عاملة ماهرة.</p>
+                    </div>
+                    <!-- Feature 5: Price -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">💰</div>
+                        <h4 class="text-xl font-bold mb-2">أسعار على قد الإيد</h4>
+                        <p class="text-gray-600">نقدم قيمة استثنائية مقابل السعر، مع الحفاظ على أعلى معايير الجودة.</p>
+                    </div>
+                    <!-- Feature 6: Installation -->
+                    <div class="feature-card bg-gray-50 p-8 rounded-lg text-center border border-gray-200">
+                        <div class="text-5xl mb-4 text-[#3A5F7F]">🛠️</div>
+                        <h4 class="text-xl font-bold mb-2">تركيب احترافي</h4>
+                        <p class="text-gray-600">فريق فني مدرب على أعلى مستوى لتركيب دقيق وسريع بدون أي إزعاج.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">من أعمالنا</h3>
+                    <p class="text-gray-600 max-w-2xl mx-auto">شاهد بنفسك جودة وجمال تصميماتنا. اضغط على أي صورة لتكبيرها.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <img src="https://placehold.co/600x400/3A5F7F/FFFFFF?text=شباك+مودرن" alt="شباك ألوميتال مودرن" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                    <img src="https://placehold.co/600x400/2D3748/FFFFFF?text=باب+بلكونة" alt="باب بلكونة ألوميتال" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                    <img src="https://placehold.co/600x400/718096/FFFFFF?text=شباك+مفصلي" alt="شباك ألوميتال مفصلي" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                    <img src="https://placehold.co/600x400/A0AEC0/FFFFFF?text=باب+جرار" alt="باب ألوميتال جرار" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                    <img src="https://placehold.co/600x400/4A5568/FFFFFF?text=واجهة+مكتب" alt="واجهة مكتب ألوميتال" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                    <img src="https://placehold.co/600x400/3A5F7F/FFFFFF?text=شباك+حمام" alt="شباك حمام ألوميتال" class="gallery-img w-full h-64 object-cover rounded-lg cursor-pointer shadow-md">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Modal -->
+        <div id="imageModal" class="modal">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-3xl md:text-4xl font-bold mb-4">هل أنت مستعد لتجديد منزلك؟</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto mb-8">لا تتردد في التواصل معنا. فريقنا جاهز للرد على جميع استفساراتك وتقديم عرض سعر مجاني يناسب احتياجاتك.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <div class="text-lg font-semibold">📞 الهاتف: <a href="tel:01234567890" class="hover:underline">01234567890</a></div>
+                    <div class="text-lg font-semibold">📧 البريد الإلكتروني: <a href="mailto:contact@habibmetal.com" class="hover:underline">contact@habibmetal.com</a></div>
+                    <a href="#" class="btn-primary rounded-full px-8 py-3 text-lg font-semibold">اطلب عرض سعر الآن</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#2D3748] text-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 مصنع الحبيب ميتال. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.modal-close');
+
+        document.querySelectorAll('.gallery-img').forEach(img => {
+            img.addEventListener('click', function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            });
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
